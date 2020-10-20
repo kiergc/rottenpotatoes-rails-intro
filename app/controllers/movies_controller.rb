@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @all_ratings = @movies.all_ratings
+    redirect_to movies_path
   end
 
   def new

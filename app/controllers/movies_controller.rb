@@ -7,10 +7,11 @@ class MoviesController < ApplicationController
   end
 
   def index
+    byebug
     @movies = Movie.all
     @all_ratings = @movies.all_ratings
-    @ratings_to_show = []
-    redirect_to movies_path
+    @ratings_to_show = params[:ratings].keys
+    render :index
   end
 
   def new

@@ -1,10 +1,6 @@
 class Movie < ActiveRecord::Base
   
-  def all_ratings
-    all_ratings = []
-    Movie.each do |m|
-      all_ratings << m.rating
-    end
-    puts all_ratings
+  def Movie.all_ratings
+    return ['G', 'PG', 'PG-13', 'R']
   end
 end
